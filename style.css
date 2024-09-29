@@ -12,6 +12,7 @@
   display: none;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +30,7 @@ body {
 .main {
   /* z-index: 100; */
   position: relative;
+  overflow-x: hidden; 
   background-color: black;
 }
 
@@ -105,7 +107,7 @@ nav h4 {
 }
 
 .page1-content h1 span {
-  margin-top: 15vw;
+  margin-top: 7vw;
   letter-spacing: 4vw;
   font-weight: 800;
   display: inline-block;
@@ -645,4 +647,77 @@ button:hover {
   line-height: 9vw;
   opacity: 0;
   transition: opacity 0.2s, transform 0.2s;
+}
+
+@media (max-width: 768px) {
+  nav h2, nav h4 {
+    font-size: 3vw;
+  }
+
+  .page1-content h1 {
+    font-size: 23vw;
+    margin-top: 120vw;
+    align-items: center;
+  }
+
+  .page1-content h1 span {
+    letter-spacing: 2vw;
+  }
+
+  .menu {
+    height: 100vh;
+  }
+
+  .menu ul {
+    padding: 0;
+  }
+
+  .menu a {
+    font-size: 5vw;
+  }
+
+  .text1 p, .text2 span, .page3-top h2, .page3-text2-part-2 h2 {
+    font-size: 5vw;
+    line-height: 1.4;
+    padding: 0;
+  }
+
+  .page3-elements {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .page3-elements .box {
+    width: 100%;
+    margin-bottom: 5vw;
+  }
+
+  .page4 svg {
+    height: 50%;
+  }
+
+  .swiper-slide img {
+    margin-top: 20px;
+    width: 80%;
+    height: 100%;
+    margin-bottom: 2vw;
+  }
+
+  .footer {
+    height: auto;
+    padding: 5vw;
+  }
+
+  .top-part, .bottom-part {
+    flex-direction: column;
+  }
+
+  .right-section {
+    margin-top: 5vw;
+    gap: 5vw;
+  }
+
+  .bottom-part2 h1 span {
+    font-size: 15vw;
+  }
 }

@@ -1,4 +1,27 @@
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
 
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
 
 function cursorEffect() {
     var page1Content = document.querySelector(".page1-content")
@@ -31,7 +54,7 @@ function page2Animation() {
         duration: 1,
         scrollTrigger: {
             trigger: ".page2",
-            scroller: ".main",
+            scroller: lenis.wrapper, // Use Lenis wrapper as scroller
             start: "top 47%",
             end: "top 37%",
             scrub: 2
@@ -142,8 +165,10 @@ function menuAnimation() {
 
             const targetElement = document.querySelector(this.getAttribute('href'));
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
+                lenis.scrollTo(targetElement, {
+                    offset: 0,
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
                 });
             }
         });
