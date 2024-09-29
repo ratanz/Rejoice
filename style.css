@@ -1,0 +1,648 @@
+@font-face {
+  font-family: "Bonny";
+  src: url("/fonts/Bonny-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url(fonts/Satoshi-Variable.ttf);
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Satoshi";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #faf8f3;
+}
+
+.main {
+  /* z-index: 100; */
+  position: relative;
+  background-color: black;
+}
+
+.page1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #393939;
+  position: relative;
+}
+
+.cursor {
+  height: 7vw;
+  width: 7vw;
+  background-color: #ff5f38;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  display: none;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+#cursor h4 {
+  font-size: 4vw;
+  font-weight: 800;
+}
+
+.page1 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.page1-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5vw;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 3vw;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+}
+
+nav h2 {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+nav h4 {
+  font-size: 1.3vw;
+  font-weight: 500;
+}
+
+.page1-content h1 {
+  padding-top: 15vw;
+  font-size: 20vw;
+  margin-left: 5vw;
+}
+
+.page1-content h1 span {
+  margin-top: 15vw;
+  letter-spacing: 4vw;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background-color: #faf8f3;
+  padding: 2vw;
+  transition: all 1s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.menu-text{
+  height: 20vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.menu-text span {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.menu-text h3{
+  font-size: 1.2vw;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-text h3::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.menu-text h3:hover::after {
+  width: 100%;
+}
+
+
+.menu.active {
+  top: 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0 1.4vw;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vw;
+  justify-content: center;
+}
+
+.menu li {
+  margin-bottom: 1.4vw;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 2vw;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+
+.take-seat button {
+  margin-left: 1vw;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  background-color: transparent;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.take-seat button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.page2 {
+  width: 100%;
+  height: 80vh;
+  background-color: #faf8f3;
+  position: relative;
+  padding: 3vw 2.8vw;
+}
+
+.text1 {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh;
+  padding-top: 1vw;
+}
+
+.text1 p {
+  font-size: 1.8vw;
+  font-family: Satoshi;
+}
+
+.line {
+  background-color: black;
+  width: 100%;
+  height: 0.7px;
+}
+
+.text2 span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+  line-height: 4vw;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 2vw;
+  font-family: Satoshi;
+}
+
+.page3 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #faf8f3;
+  position: relative;
+  padding: 3vw;
+}
+
+.page3-top {
+  text-align: center;
+}
+
+.page3-top h4 {
+  margin-bottom: 1vw;
+  font-size: 1vw;
+  font-weight: 500;
+  font-family: Satoshi;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.page3-top span {
+  font-size: 0.8vw;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  background-color: #252525;
+  color: white;
+  border-radius: 10px;
+}
+
+.page3-top h2 {
+  font-size: 3vw;
+  font-weight: 500;
+  font-family: Satoshi;
+}
+
+.page3-elements {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8vw;
+  background-color: #faf8f3;
+}
+
+.page3 .page3-text {
+  display: flex;
+  justify-content: space-between;
+  /* background: #000; */
+  margin-top: 10vw;
+  font-size: 2vw;
+}
+
+.page3 .page3-text2 {
+  margin-top: 7vw;
+  font-size: 2vw;
+  /* background: #000; */
+  margin: 1vw;
+}
+
+.page3-text2 h4 {
+  font-family: Satoshi;
+  font-weight: 400;
+}
+
+.page3-text2-part-2 h2 {
+  font-family: Satoshi;
+  padding: 2vw;
+  line-height: 4vw;
+  font-size: 4.3vw;
+  font-weight: 400;
+}
+
+.page3-text p {
+  font-family: Satoshi;
+}
+
+.page3-elements .box {
+  height: 100%;
+  width: 32.5%;
+  margin-top: -15vw;
+  /* background-color: beige; */
+  position: relative;
+}
+
+.page3-elements .box video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page3-elements .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: all linear 0.5s;
+  object-position: center;
+}
+
+.page3-elements .box span img {
+  position: absolute;
+  object-fit: contain;
+  object-position: center;
+  width: 10vw;
+  left: 10vw;
+  top: 15vw;
+}
+
+.page3-elements .box:hover img {
+  opacity: 0;
+}
+
+.page3-elements .box:hover span img {
+  opacity: 1;
+}
+
+.page4 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf8f3;
+}
+
+.page4 video {
+  height: 100%;
+}
+
+.page4 svg {
+  position: absolute;
+  height: 65%;
+}
+
+.page4 svg text {
+  font-family: Satoshi;
+}
+
+.page5 {
+  height: 100vh;
+  width: 100%;
+  padding: 4vw 0;
+  position: relative;
+  background-color: #faf8f3;
+}
+
+.page5-top .text1 {
+  font-family: Satoshi;
+  font-size: 2vw;
+}
+
+.text1 span {
+  font-family: Satoshi;
+}
+
+.page5-top .text2 h2 {
+  font-family: Satoshi;
+  padding: 2vw;
+  line-height: 4vw;
+  font-size: 4.3vw;
+  font-weight: 400;
+}
+
+.page5-top h1 {
+  font-size: 10vw;
+  font-weight: 500;
+  margin-top: 5vw;
+  border-bottom: 1px solid #252525;
+  width: 96%;
+  margin-left: 2%;
+}
+
+.swiperdiv {
+  height: 65vh;
+  width: 100%;
+  position: relative;
+  margin-top: -2%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background-color: #faf8f3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.swiper-slide img {
+  /* display: block; */
+  width: 18%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.page5-bottom {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf8f3;
+}
+
+.page5-bottom .bottom-text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-text h1 {
+  font-size: 5vw;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.bottom-text h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%; /* Start off-screen */
+  height: 2px;
+  width: 100%;
+  background: black;
+  transition: left 0.5s ease; /* Smooth transition */
+}
+
+.bottom-text h1:hover::before {
+  left: 0; /* Move to fill the width of the parent on hover */
+}
+
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #faf8f3;
+  gap: 10px;
+}
+
+.loader h3 {
+  font-weight: 300;
+  font-size: 2vw;
+}
+
+.page6 {
+  height: 60vw;
+  /* position: relative; */
+  width: 100%;
+}
+
+.footer {
+  height: 58vw;
+  width: 100%;
+  position: relative;
+  background-color: #090909;
+  color: #fffcf1;
+  z-index: 9;
+  padding: 51px 40px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Satoshi", sans-serif;
+}
+
+.footer-content h1 {
+  color: white;
+}
+
+.top-part {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10vw;
+}
+
+.left-section h3 {
+  font-size: 24px;
+  margin-bottom: 1vw;
+}
+
+.left-section button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #fffcf1;
+  padding: 16px 22px;
+  border-radius: 45px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fffcf1;
+  transition: all 0.4s ease-out;
+}
+
+button:hover {
+  background-color: #fffcf1;
+  color: #0e0e0e;
+}
+
+.right-section {
+  display: flex;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.main-links,
+.social-links {
+  list-style: none;
+  margin-right: 4vw;
+}
+
+.main-links li,
+.social-links li {
+  margin-bottom: 10px;
+}
+
+/* .social-links a {
+  text-decoration: none;
+  color: white;
+} */
+
+.main-links .social-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.arrow {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+.bottom-part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.locations {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.right-section {
+  gap: 120px;
+}
+
+.right-section a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.bottom-part2 {
+  display: flex;
+  justify-content: center;
+  z-index: 305;
+  flex-direction: row;
+}
+
+.bottom-part2 h1 span {
+  display: inline-block;
+  color: white;
+  font-size: 28vw;
+  line-height: 9vw;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
