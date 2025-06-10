@@ -23,4 +23,4 @@ This project is a modern, reimagined version of a leading digital agency website
 2. Open `index.html` in your browser.
 
 ## 📬 Contact
-For feedback, collaboration, or opportunities, feel free to reach out via [X](https://www.x.com/ratan_codes) or open an issue!
+For feedback, collaboration, or opportunities, feel free to reach out via [Twitter](https://www.x.com/ratan_codes) or open an issue!
