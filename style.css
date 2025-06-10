@@ -86,7 +86,7 @@ nav {
   align-items: center;
   padding: 2vw 3vw;
   color: #fff;
-  position: fixed;
+  position: relative;;
   width: 100%;
 }
 
