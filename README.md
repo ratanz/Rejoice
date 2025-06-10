@@ -16,10 +16,6 @@ This project is a modern, reimagined version of a leading digital agency website
 - JavaScript (ES6+)
 - [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/)
 
-## 📸 Preview
-
-![Project Screenshot](screenshot.png)
-
 ## 🛠️ Getting Started
 
 1. Clone the repository  
@@ -27,5 +23,4 @@ This project is a modern, reimagined version of a leading digital agency website
 2. Open `index.html` in your browser.
 
 ## 📬 Contact
-
-For feedback, collaboration, or opportunities, feel free to reach out via [LinkedIn](https://www.linkedin.com/) or open an issue!
+For feedback, collaboration, or opportunities, feel free to reach out via [X](https://www.x.com/ratan_codes) or open an issue!
